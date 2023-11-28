@@ -1,26 +1,23 @@
 //f4c752
-import { Button, Drawer, IconButton } from "@mui/material"
-import { useState } from "react"
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { Box, Container } from "@mui/material";
+import InfoCard from "./components/InfoCard";
 
-function App() {
-  const [open, setOpen] = useState(false)
+const App = () => {
+    return (
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                bgcolor: "background.paper"
+            }}
+        >
+            <Container maxWidth='sm' sx={{ display: "flex", height: "80vh" }}>
+                <InfoCard />
+            </Container>
+        </Box>
+    );
+};
 
-  const toggleDrawer = (state: boolean) => () => {
-    setOpen(state);
-  }
-
-  return (
-    <div>
-      <Drawer
-        open={open}
-        variant="persistent"
-      >
-        <Button onClick={toggleDrawer(false)}>Open</Button>
-      </Drawer>
-      <Button onClick={toggleDrawer(true)}>Open</Button>
-    </div>
-  )
-}
-
-export default App
+export default App;
